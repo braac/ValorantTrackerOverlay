@@ -1,0 +1,1 @@
+var e=Object.defineProperty;var c=(t,s,a)=>s in t?e(t,s,{enumerable:!0,configurable:!0,writable:!0,value:a}):t[s]=a;var o=(t,s,a)=>c(t,typeof s!="symbol"?s+"":s,a);class l{}o(l,"Latest","https://content.overwolf.com/libs/ads/latest/owads.min.js");export{l as A};

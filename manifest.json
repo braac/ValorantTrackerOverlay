@@ -1,0 +1,265 @@
+{
+	"manifest_version": 1,
+	"type": "WebApp",
+	"meta": {
+		"name": "Valorant Tracker",
+		"author": "Tracker Network",
+		"description": "Team up with other agents and follow a mysterious path to Radiant by keeping track of all your progress as you play!",
+		"version": "1.26.1",
+		"minimum-overwolf-version": "0.241.0",
+		"minimum-gep-version": "248.0",
+		"icon": "assets/icons/IconMouseOver.png",
+		"icon_gray": "assets/icons/IconMouseNormal.png",
+		"launcher_icon": "assets/icons/LauncherIcon.ico"
+	},
+	"permissions": [
+		"Extensions",
+		"Streaming",
+		"DesktopStreaming",
+		"VideoCaptureSettings",
+		"Profile",
+		"GameInfo",
+		"Hotkeys",
+		"FileSystem"
+	],
+	"data": {
+		"start_window": "background",
+		"uninstall_window": {
+			"file": "windows/uninstall.html",
+			"required_runtime": 3000
+		},
+		"windows": {
+			"background": {
+				"file": "windows/background.html",
+				"is_background_page": true,
+				"background_optimization": false
+			},
+			"desktop": {
+				"file": "windows/desktop.html",
+				"desktop_only": true,
+				"native_window": true,
+				"transparent": true,
+				"resizable": false,
+				"size": {
+					"width": 1280,
+					"height": 720
+				},
+				"min_size": {
+					"width": 1280,
+					"height": 720
+				},
+				"max_size": {
+					"width": 1280,
+					"height": 720
+				},
+				"allow_local_file_access": true,
+				"disable_hardware_acceleration": true
+			},
+			"ingame": {
+				"file": "windows/desktop.html",
+				"in_game_only": true,
+				"transparent": true,
+				"resizable": false,
+				"size": {
+					"width": 1280,
+					"height": 720
+				},
+				"min_size": {
+					"width": 1280,
+					"height": 720
+				},
+				"max_size": {
+					"width": 1280,
+					"height": 720
+				},
+				"allow_local_file_access": true,
+				"focus_game_takeover": "ReleaseOnHidden",
+				"focus_game_takeover_release_hotkey": "toggle"
+			},
+			"second_screen": {
+				"file": "windows/second_screen.html",
+				"desktop_only": true,
+				"native_window": true,
+				"keep_window_location": true,
+				"transparent": true,
+				"resizable": false,
+				"size": {
+					"width": 1280,
+					"height": 680
+				},
+				"min_size": {
+					"width": 1280,
+					"height": 680
+				},
+				"max_size": {
+					"width": 1280,
+					"height": 680
+				},
+				"allow_local_file_access": true,
+				"disable_hardware_acceleration": true
+			},
+			"duels": {
+				"file": "windows/duels.html",
+				"desktop_only": true,
+				"native_window": true,
+				"keep_window_location": true,
+				"transparent": true,
+				"resizable": false,
+				"size": {
+					"width": 400,
+					"height": 680
+				},
+				"min_size": {
+					"width": 400,
+					"height": 680
+				},
+				"max_size": {
+					"width": 400,
+					"height": 680
+				},
+				"allow_local_file_access": true,
+				"disable_hardware_acceleration": true
+			},
+			"teammates": {
+				"file": "windows/teammates.html",
+				"in_game_only": true,
+				"transparent": true,
+				"resizable": false,
+				"size": {
+					"width": 640,
+					"height": 320
+				},
+				"min_size": {
+					"width": 640,
+					"height": 320
+				},
+				"max_size": {
+					"width": 640,
+					"height": 320
+				}
+			},
+			"timeline": {
+				"file": "windows/timeline.html",
+				"in_game_only": true,
+				"transparent": true,
+				"resizable": false,
+				"size": {
+					"width": 1155,
+					"height": 380
+				},
+				"min_size": {
+					"width": 1155,
+					"height": 380
+				},
+				"max_size": {
+					"width": 1155,
+					"height": 380
+				}
+			},
+			"guides": {
+				"file": "windows/guides.html",
+				"in_game_only": true,
+				"transparent": true,
+				"resizable": false,
+				"size": {
+					"width": 400,
+					"height": 425
+				},
+				"min_size": {
+					"width": 400,
+					"height": 425
+				},
+				"max_size": {
+					"width": 400,
+					"height": 425
+				}
+			},
+			"assistant": {
+				"file": "windows/assistant.html",
+				"in_game_only": true,
+				"transparent": true,
+				"resizable": false,
+				"size": {
+					"width": 400,
+					"height": 734
+				},
+				"min_size": {
+					"width": 400,
+					"height": 734
+				},
+				"max_size": {
+					"width": 400,
+					"height": 734
+				},
+				"restrict_to_game_bounds": true
+			},
+			"verification": {
+				"file": "windows/verification.html"
+			}
+		},
+		"game_events": [
+			21640
+		],
+		"game_targeting": {
+			"type": "dedicated",
+			"game_ids": [
+				21640
+			]
+		},
+		"launch_events": [
+			{
+				"event": "GameLaunch",
+				"event_data": {
+					"game_ids": [
+						21640
+					]
+				},
+				"start_minimized": true
+			}
+		],
+		"hotkeys": {
+			"toggle": {
+				"title": "Show/Hide App In-Game",
+				"action-type": "toggle",
+				"default": "Alt+T"
+			},
+			"switch-view": {
+				"title": "Switch Live Match View",
+				"action-type": "custom",
+				"default": "Alt+L"
+			},
+			"tab": {
+				"title": "Show Match Timeline",
+				"action-type": "custom",
+				"default": "Tab",
+				"passthrough": true,
+				"hold": true
+			}
+		},
+		"force_browser": "user",
+		"disable_dt": false,
+		"disable_cleanup": true,
+		"url_protocol": {
+			"schemes": [
+				"overwolf-extension-ipmlnnogholfmdmenfijjifldcpjoecappfccceh"
+			]
+		},
+		"externally_connectable": {
+			"matches": [
+				"https://*.overwolf.com",
+				"https://*.tracker.gg",
+				"https://*.tracker.network",
+				"https://*.thetrackernetwork.com",
+				"https://*.github.com",
+				"https://*.pvp.net",
+				"https://trackercdn.com"
+			]
+		},
+		"extra-objects": {
+			"support-plugin": {
+				"file": "plugins/Overwolf.Plugins.Support.dll",
+				"class": "Overwolf.Plugins.Support"
+			}
+		}
+	}
+}
